@@ -35,12 +35,37 @@ namespace Parcial1
             while (reader.Peek() > -1)
             {
                 Futbolistas futbolistas = new Futbolistas();
-                futbolistas.
+                futbolistas.codigo = reader.ReadLine();
+                futbolistas.fecha = reader.ReadLine();
+                futbolistas.Equipo = reader.ReadLine();
+                futbolistas.gol = Int32.Parse(reader.ReadLine());
 
-                goles.Add(Gol);
+                goles.Add(futbolistas);
             }
 
             reader.Close();
+            mostrar();
+        }
+        public void mostrar()
+        {
+
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+
+            dataGridView1.DataSource = goles;
+            dataGridView1.Refresh();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ordenar();
+            mostrar();
+        }
+        public void ordenar()
+        {
+
+            goles = goles.OrderByDescending(c => c.gol).ToList();
+
         }
     }
 }

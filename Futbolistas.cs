@@ -8,9 +8,9 @@ namespace Parcial1
 {
     internal class Futbolistas
     {
-        public int codigo { get; set; }
-        public DateTime fecha { get; set; }
+        public string codigo { get; set; }
+        public string fecha { get; set; }
         public string Equipo { get; set; }
-        public int goles { get; set; }
+        public int gol { get; set; }
     }
 }
